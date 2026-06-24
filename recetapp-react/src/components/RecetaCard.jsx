@@ -1,22 +1,57 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const RecetaCard = ({ receta }) => {
+const categoryStyles = {
+  Entrada: 'entrada',
+  Fondo: 'fondo',
+  Postre: 'postre'
+};
+
+export const RecetaCard = ({ nombre, origen, porciones, categoria, descripcion, ingredientes = [] }) => {
+  const categoryClass = categoryStyles[categoria] || 'otra-categoria';
+
   return (
-    <div className="receta-card">
-      <h3>{receta.nombre}</h3>
-      <p className="categoria">{receta.categoria}</p>
-      <p className="descripcion">{receta.descripcion}</p>
-      <div className="details">
-        <span className="tiempo">⏱️ {receta.tiempo} min</span>
+    <article className={`receta-card ${categoryClass}`}>
+      <header className="receta-card-header">
+        <div>
+          <h3>{nombre}</h3>
+          <p className="receta-origen">{origen}</p>
+        </div>
+        <span className={`categoria-badge ${categoryClass}`}>{categoria}</span>
+      </header>
+
+      <div className="receta-meta">
+        <p><strong>Porciones:</strong> {porciones}</p>
       </div>
+
+      <p className="descripcion">{descripcion}</p>
+
       <div className="ingredientes">
-        <h4>Ingredientes:</h4>
+        <h4>Ingredientes</h4>
         <ul>
-          {receta.ingredientes.map((ing, idx) => (
-            <li key={idx}>{ing}</li>
+          {ingredientes.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
       </div>
-    </div>
+    </article>
   );
+};
+
+RecetaCard.propTypes = {
+  nombre: PropTypes.string,
+  origen: PropTypes.string,
+  porciones: PropTypes.number,
+  categoria: PropTypes.oneOf(['Entrada', 'Fondo', 'Postre']),
+  descripcion: PropTypes.string,
+  ingredientes: PropTypes.arrayOf(PropTypes.string)
+};
+
+RecetaCard.defaultProps = {
+  nombre: 'Receta sin nombre',
+  origen: 'Origen desconocido',
+  porciones: 1,
+  categoria: 'Entrada',
+  descripcion: 'No hay descripción disponible.',
+  ingredientes: []
 };
