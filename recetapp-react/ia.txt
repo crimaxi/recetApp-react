@@ -9,3 +9,5 @@ Etapa 2 — Componente RecetaCard (20 min)
 
 Utilidad del prompt:
 el prompt realizado ayudo a completar la fase 2 sin ningun problema por lo que no se realizaron correcciones mayores
+Etapa 3 — Lista de recetas (15 min) 1. Crea src/components/ListaRecetas.jsx que reciba el array de recetas por props. 2. Recorre el array con .map() y renderiza un RecetaCard por cada receta. Programación Front End (TI3031) — Sumativa U3 · V4 Página 5 3. Asigna correctamente la prop key usando el id de cada elemento (no uses el índice del array). 4. En App.jsx, renderiza ListaRecetas pasándole los datos importados
+etapa 4:
