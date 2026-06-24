@@ -1,34 +1,24 @@
-# React + TypeScript + Vite
+# RecetApp React
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Estudiante:** Christopher Cortés
 
-Currently, two official plugins are available:
+## Descripción
+RecetApp es una aplicación en React que muestra un listado de recetas con filtrado por categoría y búsqueda por nombre. Cada receta se presenta en una tarjeta visual con datos como nombre, origen, porciones, categoría, descripción, ingredientes y una etiqueta especial para recetas vegetarianas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Ejecución local
+1. Abre una terminal en la carpeta del proyecto `recetapp-react`.
+2. Instala dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abre el navegador en:
+   ```
+   http://localhost:5173/
+   ```
 
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## GitHub Copilot
+Este proyecto utilizó GitHub Copilot como asistente para generar y mejorar partes del código, incluyendo componentes, lógica de filtros y documentación.
