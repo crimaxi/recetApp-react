@@ -6,8 +6,8 @@ export const FiltroCategoria = ({ categorias, filtroActivo, onFiltroChange }) =>
       <h3>Filtrar por categoría</h3>
       <div className="botones-filtro">
         <button
-          className={filtroActivo === 'todas' ? 'activo' : ''}
-          onClick={() => onFiltroChange('todas')}
+          className={filtroActivo === 'Todas' ? 'activo' : ''}
+          onClick={() => onFiltroChange('Todas')}
         >
           Todas
         </button>

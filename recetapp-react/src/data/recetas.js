@@ -16,3 +16,4 @@ export const recetas = [
   { id: 11, nombre: "Mousse de Maracuyá",      origen: "Brasileña",    porciones: 6, categoria: "Postre",  descripcion: "Postre suave y ácido a base de maracuyá.",             ingredientes: ["maracuyá", "crema", "leche condensada", "gelatina"],  esVegetariana: true },
   { id: 12, nombre: "Pastel de Choclo",        origen: "Chilena",      porciones: 6, categoria: "Fondo",   descripcion: "Pastel horneado con masa de choclo y relleno de pino.", ingredientes: ["choclo", "carne", "pollo", "albahaca"],              esVegetariana: false }
 ];
+  

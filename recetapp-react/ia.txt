@@ -7,14 +7,22 @@ Etapa 2 — Componente RecetaCard
 4. Aplica un estilo diferenciado según la categoría (un color/etiqueta distinto para Entrada, Fondo, Postre).
 
 Utilidad del prompt:
-el prompt realizado ayudo a completar la fase 2 sin ningun problema por lo que no se realizaron correcciones mayores
+El prompt clarificó los requisitos del componente y permitió construir `RecetaCard` con props individuales y estilos de categoría desde el inicio. El resultado fue una implementación directa sin necesidad de correcciones mayores.
+
+Qué corregí:
+Ajusté `RecetaCard` para recibir props separados y añadí validación de entradas con `PropTypes`. También añadí estilos de categoría y aseguré que los datos se muestren siempre de forma ordenada.
 
 Etapa 3 — Lista de recetas 
 1.Crea src/components/ListaRecetas.jsx que reciba el array de recetas por props.
 2. Recorre el array con .map() y renderiza un RecetaCard por cada receta. Programación Front End (TI3031) — Sumativa U3 · V4 Página 5 
 3. Asigna correctamente la prop key usando el id de cada elemento (no uses el índice del array).
 4. En App.jsx, renderiza ListaRecetas pasándole los datos importados
-utilidad del prompt:
+
+Utilidad del prompt:
+El prompt ayudó a estructurar la lista de recetas y garantizó el uso correcto de `key` en el renderizado. Además facilitó la integración de datos desde `App.tsx` hacia `ListaRecetas`, dejando claro el flujo de props.
+
+Qué corregí:
+Adapté `ListaRecetas` para pasar props individuales a `RecetaCard` y corregí el mensaje de lista vacía. También integré los datos importados en `App.tsx` y eliminé contenido de plantilla restante.
 
 Etapa 4 — Estado y filtro seguro:
 1. Crea src/components/FiltroCategoria.jsx con botones o un selector para filtrar por la categoría: “Todas”, “Entrada”, “Fondo”, “Postre”. 
@@ -22,9 +30,26 @@ Etapa 4 — Estado y filtro seguro:
 3. Aplica ambos filtros sobre el array antes de pasarlo a ListaRecetas. 
 4. Usa renderizado condicional para mostrar el mensaje “No hay recetas que coincidan” cuando el resultado quede vacío. 
 
+Utilidad del prompt:
+El prompt sirvió para implementar filtros seguros y controlados, con estado reactivo en `App.tsx` y normalización del texto de búsqueda. También aseguró el manejo adecuado del resultado vacío con renderizado condicional.
 
+Qué corregí:
+Organicé el filtro y la búsqueda como campos controlados, normalicé el texto de búsqueda y garantice que el array se filtre antes de renderizar. Añadí `useState` en `App.tsx` y mejoré la respuesta visual cuando no hay recetas.
 
 Etapa 5 — Destacar las recetas vegetarianas
 1. Resalta visualmente los elementos con esVegetariana: true (por ejemplo, una etiqueta “VEG” o un borde distinto). 
 2. Agrega un contador que muestre cuántas recetas son vegetarianas.
 3. Verifica que toda la app corre sin errores ni warnings en consola.  
+
+Utilidad del prompt:
+El prompt destacó la necesidad de distinguir visualmente las recetas vegetarianas y de agregar un contador útil al usuario. Se comprobó el correcto funcionamiento mediante la compilación sin errores y warnings.
+
+Qué corregí:
+Añadí indicador `VEG` y borde especial a las tarjetas vegetarianas, así como un contador en el encabezado. Además, resolví los errores de TypeScript de importación agregando `allowJs` y tipando el filtrado en `App.tsx`.
+
+etapa 5 — Destacar las recetas vegetarianas:
+verificar las medidas de seguridad en las fases anteriores
+Utilidad del prompt:
+se utilizo para verificar que la pagina cumpla con las medidas de seguridad entregadas en los requisitos de la prueba
+que corregí:
+se encontro un error en el boton de todas que fue corregido 
