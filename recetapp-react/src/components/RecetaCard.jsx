@@ -7,17 +7,21 @@ const categoryStyles = {
   Postre: 'postre'
 };
 
-export const RecetaCard = ({ nombre, origen, porciones, categoria, descripcion, ingredientes = [] }) => {
+export const RecetaCard = ({ nombre, origen, porciones, categoria, descripcion, ingredientes = [], esVegetariana = false }) => {
   const categoryClass = categoryStyles[categoria] || 'otra-categoria';
+  const vegetarianClass = esVegetariana ? 'vegetariana' : '';
 
   return (
-    <article className={`receta-card ${categoryClass}`}>
+    <article className={`receta-card ${categoryClass} ${vegetarianClass}`}>
       <header className="receta-card-header">
         <div>
           <h3>{nombre}</h3>
           <p className="receta-origen">{origen}</p>
         </div>
-        <span className={`categoria-badge ${categoryClass}`}>{categoria}</span>
+        <div className="header-badges">
+          <span className={`categoria-badge ${categoryClass}`}>{categoria}</span>
+          {esVegetariana && <span className="veg-badge">VEG</span>}
+        </div>
       </header>
 
       <div className="receta-meta">
@@ -44,7 +48,8 @@ RecetaCard.propTypes = {
   porciones: PropTypes.number,
   categoria: PropTypes.oneOf(['Entrada', 'Fondo', 'Postre']),
   descripcion: PropTypes.string,
-  ingredientes: PropTypes.arrayOf(PropTypes.string)
+  ingredientes: PropTypes.arrayOf(PropTypes.string),
+  esVegetariana: PropTypes.bool
 };
 
 RecetaCard.defaultProps = {
@@ -53,5 +58,6 @@ RecetaCard.defaultProps = {
   porciones: 1,
   categoria: 'Entrada',
   descripcion: 'No hay descripción disponible.',
-  ingredientes: []
+  ingredientes: [],
+  esVegetariana: false
 };

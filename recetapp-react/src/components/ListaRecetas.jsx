@@ -18,6 +18,7 @@ export const ListaRecetas = ({ recetas }) => {
               categoria={receta.categoria}
               descripcion={receta.descripcion}
               ingredientes={receta.ingredientes}
+              esVegetariana={receta.esVegetariana}
             />
           ))}
         </div>

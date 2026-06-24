@@ -306,3 +306,30 @@
   margin: 0;
   color: #555;
 }
+
+.veg-counter {
+  margin-top: 12px;
+  color: #2a7a2a;
+  font-weight: 700;
+}
+
+.header-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.veg-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.receta-card.vegetariana {
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.18);
+}

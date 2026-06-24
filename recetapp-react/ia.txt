@@ -23,7 +23,8 @@ Etapa 4 — Estado y filtro seguro:
 4. Usa renderizado condicional para mostrar el mensaje “No hay recetas que coincidan” cuando el resultado quede vacío. 
 
 
-Buenas prácticas de desarrollo seguro obligatorias:
- • El campo de búsqueda debe ser un componente controlado (su valor vive en el estado de React).
-  • Valida y normaliza el texto de búsqueda (recorta espacios y limita el largo) antes de usarlo, para no confiar ciegamente en la entrada del usuario.
-  Utilidad del prompt:
+
+Etapa 5 — Destacar las recetas vegetarianas
+1. Resalta visualmente los elementos con esVegetariana: true (por ejemplo, una etiqueta “VEG” o un borde distinto). 
+2. Agrega un contador que muestre cuántas recetas son vegetarianas.
+3. Verifica que toda la app corre sin errores ni warnings en consola.  

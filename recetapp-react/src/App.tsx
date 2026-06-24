@@ -12,7 +12,7 @@ function App() {
 
   const busquedaNormalizada = busqueda.trim().slice(0, 50).toLowerCase()
 
-  const recetasFiltradas = recetas.filter((receta) => {
+  const recetasFiltradas = recetas.filter((receta: { categoria: string; nombre: string; esVegetariana?: boolean }) => {
     const categoriaMatch =
       categoriaActiva === 'Todas' || receta.categoria === categoriaActiva
     const nombreMatch = receta.nombre
@@ -22,11 +22,14 @@ function App() {
     return categoriaMatch && (busquedaNormalizada === '' || nombreMatch)
   })
 
+  const vegetarianasCount = recetasFiltradas.filter((receta: { esVegetariana?: boolean }) => receta.esVegetariana).length
+
   return (
     <main className="app-container">
       <header className="app-header">
         <h1>RecetaApp</h1>
         <p>Explora recetas por categoría con tarjetas visuales.</p>
+        <p className="veg-counter">Recetas vegetarianas: {vegetarianasCount}</p>
       </header>
 
       <section className="app-controls">
