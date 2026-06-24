@@ -1,0 +1,37 @@
+INFORMACIÓN SOBRE LA APLICACIÓN IA - RecetaApp React
+
+OBJETIVO:
+La aplicación RecetaApp es un gestor visual de recetas que permite a los usuarios explorar 
+diferentes recetas internacionales, filtrarlas por categoría y ver detalles como ingredientes 
+y tiempo de preparación.
+
+FUNCIONALIDAD PRINCIPAL:
+- Mostrar un catálogo de recetas con información detallada
+- Filtrar recetas por categoría culinaria
+- Interfaz amigable e intuitiva para explorar contenido gastronómico
+
+COMPONENTES CLAVE:
+1. RecetaCard: Presenta una receta individual con todos sus detalles
+2. ListaRecetas: Renderiza la colección completa de recetas
+3. FiltroCategoria: Permite seleccionar categorías para filtrar
+
+DATOS INICIALES:
+Se incluyen 5 recetas de ejemplo de diferentes culturas:
+- Pasta Carbonara (Italiana)
+- Tacos al Pastor (Mexicana)
+- Sushi Roll (Japonesa)
+- Paella Valenciana (Española)
+- Ramen (Japonesa)
+
+ARQUITECTURA:
+La aplicación sigue un patrón modular con separación de preocupaciones:
+- Componentes presentacionales (dumb components)
+- Lógica centralizada en App
+- Datos separados en archivos modulares
+
+MEJORAS FUTURAS:
+- Sistema de búsqueda avanzada
+- Guardado de recetas favoritas
+- Integración con API externa
+- Sistema de puntuaciones y comentarios
+- Función de compartir recetas
