@@ -1,54 +1,35 @@
-# Análisis del Proyecto RecetaApp React
+Elemento de React : Componente
+¿Dónde lo usas en este problema?:Se usa para crear bloques independientes como `RecetaCard`, `ListaRecetas` y `FiltroCategoria`
+¿Por qué es el adecuado?: Permite modularizar la interfaz, facilitando el mantenimiento y la reutilización del código en la tablet.
 
-## Descripción General
-RecetaApp es una aplicación web de React diseñada para mostrar y filtrar recetas de diferentes categorías culinarias. La aplicación permite a los usuarios explorar recetas, ver ingredientes y tiempos de preparación.
+Elemento de React : JSX
+¿Dónde lo usas en este problema?: Se emplea en la estructura visual de cada tarjeta de receta para mostrar los textos, listas de ingredientes y etiquetas.
+¿Por qué es el adecuado?: Combina HTML y JavaScript en un solo lugar, haciendo que el diseño del recetario sea intuitivo y rápido de programar.
 
-## Estructura del Proyecto
+Elemento de React: Props
+¿Dónde lo usas en este problema?: Se usan para traspasar la información de cada receta individual (nombre, ingredientes, categoría) desde la lista hacia la tarjeta
+¿Por qué es el adecuado?: Permite que un mismo diseño visual (`RecetaCard`) renderice datos dinámicos y diferentes de forma segura y ordenada.
+Elemento de React: Estado (useState)
+¿Dónde lo usas en este problema?: Se utiliza en `App.jsx` para almacenar el texto de búsqueda ingresado por el usuario y la categoría de filtro seleccionada 
+¿Por qué es el adecuado?: Permite que la aplicación reaccione en tiempo real y se vuelva a renderizar cuando el usuario interactúa con los filtros.
 
-### Directorios Principales
-- **src/components/** - Componentes reutilizables de React
-- **src/data/** - Datos y información de recetas
-- **public/** - Archivos estáticos
-- **src/** - Código fuente principal
+Elemento de React: Renderizado de listas (.map + key)
+¿Dónde lo usas en este problema?: Se aplica en `ListaRecetas` para recorrer el arreglo de recetas y generar un componente `RecetaCard` por cada una, usando el `id` como key.
+¿Por qué es el adecuado?: Transforma eficientemente arreglos de datos en elementos visuales, y la `key` única ayuda a React a optimizar las actualizaciones.
 
-### Componentes
+Elemento de React:  Renderizado condicional
+¿Dónde lo usas en este problema?: Se usa para mostrar el mensaje "No hay recetas que coincidan" y para añadir la etiqueta visual "VEG" a las recetas vegetarianas
+¿Por qué es el adecuado?: Permite alterar la interfaz dinámicamente según se cumplan o no los criterios de los filtros de la aplicación 
 
-#### 1. RecetaCard.jsx
-- Componente que muestra una receta individual
-- Props: `receta` (objeto con datos de la receta)
-- Muestra: nombre, categoría, descripción, tiempo, ingredientes
+---
 
-#### 2. ListaRecetas.jsx
-- Componente contenedor que renderiza múltiples RecetaCard
-- Props: `recetas` (array de recetas)
-- Maneja el caso de lista vacía
+Preguntas de Desarrollo
 
-#### 3. FiltroCategoria.jsx
-- Componente de filtrado por categoría
-- Props: `categorias`, `filtroActivo`, `onFiltroChange`
-- Permite seleccionar categorías para filtrar recetas
+1. ¿Qué ventaja tiene dividir el recetario en componentes en lugar de escribir todo en un solo archivo?
+Dividir la aplicación en componentes mejora drásticamente la organización, legibilidad y escalabilidad del código. Permite aislar responsabilidades de forma que un fallo en el buscador no afecte el renderizado básico de las tarjetas. Además, facilita el trabajo en equipo, la reutilización de elementos visuales y simplifica las pruebas unitarias o correcciones específicas futuras.
 
-### Datos
+2. ¿Qué diferencia hay entre props y estado en tu solución? Da un ejemplo concreto de cada uno tomado de esta aplicación.
+Las props son inmutables y se reciben de un componente padre, mientras que el estado es local, mutable y controlado por el propio componente para manejar su dinamismo interactivo.
 
-#### recetas.js
-- Archivo con el array de recetas disponibles
-- Cada receta contiene: id, nombre, categoría, ingredientes, tiempo, descripción
-- 5 recetas de ejemplo (Italiana, Mexicana, Japonesa, Española)
-
-## Funcionalidades
-
-1. **Visualización de Recetas** - Mostrar todas las recetas disponibles
-2. **Filtrado por Categoría** - Filtrar recetas según su categoría
-3. **Información Detallada** - Ver ingredientes y tiempo de preparación
-
-## Tecnologías Utilizadas
-- React (con JSX)
-- JavaScript ES6+
-- Vite (herramienta de construcción)
-- CSS para estilos
-
-## Próximos Pasos
-- Implementar lógica de filtrado en el componente App
-- Añadir estilos CSS completos
-- Agregar más recetas a la base de datos
-- Implementar búsqueda por nombre de receta
+Ejemplo de Prop: El objeto con los datos de una receta (como `nombre: "Tarta de Verduras"`) enviado desde `ListaRecetas` hacia `RecetaCard`.
+Ejemplo de Estado: El valor guardado mediante `useState` que almacena el texto que escribe el chef en la barra de búsqueda (por ejemplo, "Tarta").
