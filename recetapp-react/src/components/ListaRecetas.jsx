@@ -6,7 +6,7 @@ export const ListaRecetas = ({ recetas }) => {
     <div className="lista-recetas">
       <h2>Nuestras Recetas</h2>
       {recetas.length === 0 ? (
-        <p className="no-recetas">No hay recetas disponibles</p>
+        <p className="no-recetas">No hay recetas que coincidan</p>
       ) : (
         <div className="recetas-grid">
           {recetas.map((receta) => (

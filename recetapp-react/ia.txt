@@ -1,7 +1,6 @@
 Etapa 1: sin uso de ia
 
-Etapa 2 : 
-Etapa 2 — Componente RecetaCard (20 min) 
+Etapa 2 — Componente RecetaCard
 1. Crea src/components/RecetaCard.jsx. 
 2. El componente recibe por props: nombre, origen, porciones, categoria, descripcion, ingredientes. 
 3. Muestra la información de forma visual y ordenada. 
@@ -9,5 +8,22 @@ Etapa 2 — Componente RecetaCard (20 min)
 
 Utilidad del prompt:
 el prompt realizado ayudo a completar la fase 2 sin ningun problema por lo que no se realizaron correcciones mayores
-Etapa 3 — Lista de recetas (15 min) 1. Crea src/components/ListaRecetas.jsx que reciba el array de recetas por props. 2. Recorre el array con .map() y renderiza un RecetaCard por cada receta. Programación Front End (TI3031) — Sumativa U3 · V4 Página 5 3. Asigna correctamente la prop key usando el id de cada elemento (no uses el índice del array). 4. En App.jsx, renderiza ListaRecetas pasándole los datos importados
-etapa 4:
+
+Etapa 3 — Lista de recetas 
+1.Crea src/components/ListaRecetas.jsx que reciba el array de recetas por props.
+2. Recorre el array con .map() y renderiza un RecetaCard por cada receta. Programación Front End (TI3031) — Sumativa U3 · V4 Página 5 
+3. Asigna correctamente la prop key usando el id de cada elemento (no uses el índice del array).
+4. En App.jsx, renderiza ListaRecetas pasándole los datos importados
+utilidad del prompt:
+
+Etapa 4 — Estado y filtro seguro:
+1. Crea src/components/FiltroCategoria.jsx con botones o un selector para filtrar por la categoría: “Todas”, “Entrada”, “Fondo”, “Postre”. 
+2. En App.jsx, usa useState para guardar el filtro seleccionado y un campo de búsqueda por nombre. 
+3. Aplica ambos filtros sobre el array antes de pasarlo a ListaRecetas. 
+4. Usa renderizado condicional para mostrar el mensaje “No hay recetas que coincidan” cuando el resultado quede vacío. 
+
+
+Buenas prácticas de desarrollo seguro obligatorias:
+ • El campo de búsqueda debe ser un componente controlado (su valor vive en el estado de React).
+  • Valida y normaliza el texto de búsqueda (recorta espacios y limita el largo) antes de usarlo, para no confiar ciegamente en la entrada del usuario.
+  Utilidad del prompt:
